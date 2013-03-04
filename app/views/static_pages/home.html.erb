@@ -1,0 +1,140 @@
+
+
+<div class="masthead">
+  <div class="row masthead-container">
+    <div class="large-12 large-2 columns masthead-headers">
+      <h1 class="top-header">Sean Woojin Kim</h1>
+      <h2 class="second-header subheader">Web Designer / Developer</h2>
+    </div>
+  </div>
+</div>
+
+<div class="row home-container">
+  <div class="large-12 large-2 columns">
+    <h3>Hey there.</h3>
+    <p>My name is Sean. I'm excited to meet you.</p>
+    <p>What's your name?</p>
+    <%= form_tag do %>
+      <%= text_field_tag "boop" %>
+    <% end %>
+    <div class="row">
+      <div class="small-4 large-4 columns my-stats">
+        <h4>This is what I know:</h4>
+        <ul>
+          <li>Ruby</li>
+          <li>Ruby on Rails</li>
+          <li>SQL</li>
+          <li>HTML/CSS</li>
+          <li>SCSS</li>
+          <li>Javascript</li>
+          <li>jQuery</li>
+          <li>Frontend Design</li>
+        </ul>
+
+        <div class="my-links">
+          <h4>These are my links:</h4>
+          <ul>
+            <li><%= link_to "portfolio", "#" %></li>
+            <li><%= link_to "linkedin", "http://www.linkedin.com/in/seanwkim" %></li>
+            <li><%= link_to "github", "http://www.github.com/seanwooj" %></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="small-8 large-8 columns">
+        <h4>This is my story:</h4>
+        <p>I've been doing freelance web design for about five years now, having started when I needed to pay a few bills in <%= link_to "college", "http://www.usc.edu" %> real fast. Actually, I started playing with the web much earlier than that. My first real experience playing with CSS styles was when I was 13 and wanted to make my <%= link_to "myspace", "http://www.myspace.com" %> page look really cool so I could get the ladies (it didn't work, but the design was SWEET).</p>
+        <p>I made a bunch of Wordpress sites for people, but quickly got tired of that because I didn't know how or why anything was working, and I felt confined by a system which I felt didn't suit me in terms of moving forward with new technologies (sorry Wordpress). What I really wanted to be doing was building apps. More importantly, I wanted to control my own app destiny and understand <i>how things were working</i> underneath the surface.</p>
+        <p>I started learning how to write Javascript following <%= link_to "Codecademy's", "http://www.codecademy.com" %> great tutorials, and learned a lot in a really short time. But it wasn't enough, and I felt as though I wouldn't be able to get a full understanding of a web stack as quickly as I would have liked.</p>
+        <p>Luckily there were <%= link_to "a few people starting a course", "http://www.appacademy.io/#p-staff" %> that promised to teach from zero to junior developer in nine weeks. Intrigued, I signed up, got accepted, and am now on the brink of completing my (sometimes totally overwhelming) nine weeks. </p>
+        <p>I've learned a lot of <%= link_to "stuff", "#" %> in my nine weeks, much of which I've put on that sidebar over there, but the most important thing that I've learned is <i>how to learn</i> and how to totally immerse myself in what I'm learning. I've gained a love and appreciation for learning, and perhaps most importantly, a <span class="strike">hunger</span> craving to learn more.</p>
+        <p>I've told you a bunch about myself. Why don't you tell me some stuff about you?</p>
+      </div>
+
+      <div class="contact small-12 large-12 columns">
+        <h3>Don't just stand there, hire me!</h3>
+        <div class="hr"></div>
+        <form class="contact_form">
+          <div class="row">
+            <div class="large-6 small-6 columns">
+              <input type="text" placeholder="Name*" />
+            </div>
+            <div class="large-6 small-6 columns">
+              <input type="text" placeholder="Company" />
+            </div>
+            <div class="large-6 small-6 columns">
+              <input type="email" placeholder="Email*" />
+            </div>
+            <div class="large-6 small-6 columns">
+              <input type="tel" placeholder="Phone" />
+            </div>
+            <div class="large-6 small-6 columns">
+              <input type="text" placeholder="Scope of Work" />
+            </div>
+            <div class="large-6 small-6 columns">
+              <input type="text" placeholder="Budget Range" />
+            </div>
+          </div>
+          <textarea placeholder="Message* (Must be greater than 20 characters)"></textarea>
+          <a class="large button" href="#">SEND</a>
+          <a class="large button secondary" href="#">RESET</a>
+        </form>
+        <div class="hr"></div>
+        <h4><span class="unicode">&#9742</span> Call me maybe? <a href="tel:+13235435691">323 543 5691</a></h4>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+
+  /*global jQuery */
+  /*!
+  * FitText.js 1.1
+  *
+  * Copyright 2011, Dave Rupert http://daverupert.com
+  * Released under the WTFPL license
+  * http://sam.zoy.org/wtfpl/
+  *
+  * Date: Thu May 05 14:23:00 2011 -0600
+  */
+
+  (function( $ ){
+
+    $.fn.fitText = function( kompressor, options ) {
+
+      // Setup options
+      var compressor = kompressor || 1,
+          settings = $.extend({
+            'minFontSize' : Number.NEGATIVE_INFINITY,
+            'maxFontSize' : Number.POSITIVE_INFINITY
+          }, options);
+
+      return this.each(function(){
+
+        // Store the object
+        var $this = $(this);
+
+        // Resizer() resizes items based on the object width divided by the compressor * 10
+        var resizer = function () {
+          $this.css('font-size', Math.max(Math.min($this.width() / (compressor*10), parseFloat(settings.maxFontSize)), parseFloat(settings.minFontSize)));
+        };
+
+        // Call once to set.
+        resizer();
+
+        // Call on resize. Opera debounces their resize by default.
+        $(window).on('resize', resizer);
+
+      });
+
+    };
+
+  })( jQuery );
+
+  $(function(){
+    $('.top-header').fitText();
+    $('.second-header').fitText(1.2);
+  })
+
+</script>

@@ -1,0 +1,21 @@
+<%= render "layouts/shim" %>
+<head>
+  <%= render "layouts/meta" %>
+	<title><%= content_for?(:title) ? yield(:title) : "Untitled" %></title>
+
+	<%= stylesheet_link_tag    "application" %>
+	<%= javascript_include_tag "vendor/custom.modernizr" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <%= yield %>
+
+  <div class="footer row">
+    <div class="large-12 small-12 columns">
+      Designed by me, obviously.
+    </div>
+  </div>
+
+</body>
+</html>
