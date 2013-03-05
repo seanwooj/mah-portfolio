@@ -23,51 +23,53 @@
         <p>I've told you a bunch about myself. Why don't you tell me a little about <a href="#" class="hire-me">yourself?</a></p>
       </div>
 
-      <div class="large-12 small-12 columns resume">
-    <h3>Resume</h3>
-    <table>
-      <tbody>
-        <tr>
-          <td class="table-subject">Education</td>
-          <td>
-            <strong>University of Southern California</strong>
-            <br>B.S. Psychology
-            <br>2012
-            <br>
-            <br><strong>App Academy</strong>
-            <br>2013
-          </td>
-        </tr>
-        <tr>
-          <td class="table-subject">Experience</td>
-          <td>
-            <strong>App Academy</strong> January 2013 - March 2013<br>
-            An intensive nine-week course covering Ruby, Ruby on Rails, and Javascript. At the end of the course I was able to build a full Rails app from start to finish, and designed a number of web applications.<br><br>
-            <strong>Freelance Web Design</strong> 2008 - 2013<br>
-            I've built a number of sites for a variety of clients in different fields, working with HTML/CSS, Javascript, Wordpress and jQuery.<br><br>
-            <strong>Holofy</strong> 2012 - 2013<br>
-            I worked with a team of developers to build the frontend for an augmented reality app called Holofy, which is still in production. I worked with HTML/CSS and Javascript, as well as working with the Spring framework for Java, which is what our backend was built on.<br><br>
-          </td>
-        </tr>
-        <tr>
-          <td class="table-subject">Skills</td>
-          <td>
-            Foundation/Bootstrap Frameworks
-            Ruby on Rails<br>
-            HTML/CSS<br>
-            SCSS<br>
-            Javascript<br>
-            jQuery<br>
-            Frontend Design<br>
-            UI Design<br>
-            Ruby<br>
-            SQL<br>
-          </td>
-        </tr>
-      </tbody>
-    </table>
+      <%= render "layouts/portfolio" %>
 
-  </div>
+      <div class="large-12 small-12 columns resume">
+        <h3>Resume</h3>
+        <table>
+          <tbody>
+            <tr>
+              <td class="table-subject">Education</td>
+              <td>
+                <strong>University of Southern California</strong>
+                <br>B.S. Psychology
+                <br>2012
+                <br>
+                <br><strong>App Academy</strong>
+                <br>2013
+              </td>
+            </tr>
+            <tr>
+              <td class="table-subject">Experience</td>
+              <td>
+                <strong>App Academy</strong> January 2013 - March 2013<br>
+                An intensive nine-week course covering Ruby, Ruby on Rails, and Javascript. At the end of the course I was able to build a full Rails app from start to finish, and designed a number of web applications.<br><br>
+                <strong>Freelance Web Design</strong> 2008 - 2013<br>
+                I've built a number of sites for a variety of clients in different fields, working with HTML/CSS, Javascript, Wordpress and jQuery.<br><br>
+                <strong>Holofy</strong> 2012 - 2013<br>
+                I worked with a team of developers to build the frontend for an augmented reality app called Holofy, which is still in production. I worked with HTML/CSS and Javascript, as well as working with the Spring framework for Java, which is what our backend was built on.<br><br>
+              </td>
+            </tr>
+            <tr>
+              <td class="table-subject">Skills</td>
+              <td>
+                Foundation/Bootstrap Frameworks
+                Ruby on Rails<br>
+                HTML/CSS<br>
+                SCSS<br>
+                Javascript<br>
+                jQuery<br>
+                Frontend Design<br>
+                UI Design<br>
+                Ruby<br>
+                SQL<br>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+      </div>
 
       <%= render 'layouts/contact', call_to_action: "Don't just stand there, hire me!", message: @message %>
     </div>
@@ -210,6 +212,12 @@
   $('.resume-link').click(function(){
     $('html, body').animate({
       scrollTop: $(".resume").offset().top - 100
+    }, 2000);
+  })
+
+  $('.projects-link').click(function(){
+    $('html, body').animate({
+      scrollTop: $(".portfolio").offset().top - 100
     }, 2000);
   })
 

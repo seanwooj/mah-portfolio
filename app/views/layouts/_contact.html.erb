@@ -3,22 +3,22 @@
   <div class="hr"></div>
   <%= form_for message, remote: true do |f| %>
     <div class="row">
-      <div class="large-6 small-6 columns">
+      <div class="large-6 small-12 columns">
         <%= f.text_field :name, placeholder: "Name", value: session[:name] %>
       </div>
-      <div class="large-6 small-6 columns">
+      <div class="large-6 small-12 columns">
         <%= f.text_field :employer, placeholder: "Company", value: session[:employer] %>
       </div>
-      <div class="large-6 small-6 columns">
+      <div class="large-6 small-12 columns">
         <%= f.email_field :email, placeholder: "Email" %>
       </div>
-      <div class="large-6 small-6 columns">
+      <div class="large-6 small-12 columns">
         <%= f.phone_field :phone_number, placeholder: "Phone Number" %>
       </div>
-      <div class="large-6 small-6 columns">
+      <div class="large-6 small-12 columns">
         <%= f.text_field :work_scope, placeholder: "Scope of Work" %>
       </div>
-      <div class="large-6 small-6 columns">
+      <div class="large-6 small-12 columns">
         <%= f.text_field :budget_range, placeholder: "Budget Range" %>
       </div>
     </div>

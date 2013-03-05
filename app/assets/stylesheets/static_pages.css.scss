@@ -111,3 +111,21 @@ table {
 .table-subject {
   vertical-align: text-top;
 }
+
+.portfolio {
+  .portfolio-item {
+    margin-bottom: 50px;
+    padding-bottom: 15px;
+    max-height: 100px;
+    overflow: hidden;
+    cursor: pointer;
+    .details {
+      ul {
+        list-style: none;
+      }
+    }
+  }
+  .portfolio-item.active{
+    max-height: 500px;
+  }
+}
