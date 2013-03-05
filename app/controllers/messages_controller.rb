@@ -2,6 +2,8 @@ class MessagesController < ApplicationController
 
   def new
     @message = Message.new
+    session[:name] ||= "stranger"
+    session[:employer] ||= "somebody"
   end
 
   def create

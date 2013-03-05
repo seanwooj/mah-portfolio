@@ -127,7 +127,7 @@
     $('.second-header').fitText(1.3);
 
 
-    if("<%= session[:name] %>" == "stranger") {
+    if("<%= session[:name] %>" == "stranger" || "<%= session[:name] %>" == "") {
       $('a.hidden-reveal-modal').trigger('click');
     }
 
@@ -151,19 +151,40 @@
 
     $('.masthead-container').css('padding-top', topOffset);
 
+    (function showStuff() {
+      $('.top-header')
+        .hide();
+      $('.second-header')
+        .hide();
+      $('.masthead-headers a')
+        .hide();
+      $('.top-header')
+        .fadeIn(1000);
+      $('.second-header')
+        .fadeIn(1500);
+      $('.masthead-headers a')
+        .fadeIn(2000);
+    })();
 
-    var counter = 0;
-    var words = " Hello <%= session[:name] %> /Welcome /My name is  / Sean Woojin Kim";
-    typeWords = function(){
-      if ( words[counter] == "/" ) {
-        $('.masthead-headers h1').html('>');
-      } else {
-        $('.masthead-headers h1').append(words[counter]);
-      }
-      counter++;
-      setTimeout(typeWords, 100);
-    }
-    typeWords();
+    // var counter = 0;
+    // var words = " Hello <%= session[:name] %>   /Welcome /My name is  / Sean Woojin Kim";
+    // typeWords = function(){
+    //   if ( words[counter] == "/" ) {
+    //     $('.masthead-headers h1').html('>');
+    //   } else {
+    //     $('.masthead-headers h1').append(words[counter]);
+    //   }
+    //   counter++;
+    //   if (counter > words.length) {
+    //     return;
+    //   } else {
+    //     console.log(counter);
+    //     setTimeout(typeWords, 75);
+    //   }
+
+    // }
+    // typeWords();
+
   })
 
 

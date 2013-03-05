@@ -13,7 +13,7 @@
         <%= f.email_field :email, placeholder: "Email" %>
       </div>
       <div class="large-6 small-6 columns">
-        <%= f.text_field :phone_number, placeholder: "Phone Number" %>
+        <%= f.phone_field :phone_number, placeholder: "Phone Number" %>
       </div>
       <div class="large-6 small-6 columns">
         <%= f.text_field :work_scope, placeholder: "Scope of Work" %>
@@ -22,7 +22,7 @@
         <%= f.text_field :budget_range, placeholder: "Budget Range" %>
       </div>
     </div>
-    <%= f.text_field :message, placeholder: "Message" %>
+    <%= f.text_field :message, placeholder: "Message", rows: 5 %>
     <%= f.submit "SEND", class:"large button submit-message" %>
     <a class="large button secondary" href="#">RESET</a>
   <% end %>
