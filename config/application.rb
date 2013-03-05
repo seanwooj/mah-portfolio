@@ -60,5 +60,6 @@ module Portfolio
     config.assets.version = '1.0'
 
     config.assets.initialize_on_precompile = false
+    Rails.application.config.assets.compile = true
   end
 end
