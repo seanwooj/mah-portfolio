@@ -1,0 +1,32 @@
+<div class="contact small-12 large-12 columns">
+  <h3><%= call_to_action %></h3>
+  <div class="hr"></div>
+  <%= form_for message, remote: true do |f| %>
+    <div class="row">
+      <div class="large-6 small-6 columns">
+        <%= f.text_field :name, placeholder: "Name", value: session[:name] %>
+      </div>
+      <div class="large-6 small-6 columns">
+        <%= f.text_field :employer, placeholder: "Company", value: session[:employer] %>
+      </div>
+      <div class="large-6 small-6 columns">
+        <%= f.email_field :email, placeholder: "Email" %>
+      </div>
+      <div class="large-6 small-6 columns">
+        <%= f.text_field :phone_number, placeholder: "Phone Number" %>
+      </div>
+      <div class="large-6 small-6 columns">
+        <%= f.text_field :work_scope, placeholder: "Scope of Work" %>
+      </div>
+      <div class="large-6 small-6 columns">
+        <%= f.text_field :budget_range, placeholder: "Budget Range" %>
+      </div>
+    </div>
+    <%= f.text_field :message, placeholder: "Message" %>
+    <%= f.submit "SEND", class:"large button submit-message" %>
+    <a class="large button secondary" href="#">RESET</a>
+  <% end %>
+  <div class="hr"></div>
+  <h4><span class="unicode">&#9742</span> Call me maybe? <a href="tel:+13235435691">949 521 2011</a></h4>
+</div>
+

@@ -69,7 +69,7 @@
 
   </div>
 
-      <%= render 'layouts/contact', call_to_action: "Don't just stand there, hire me!" %>
+      <%= render 'layouts/contact', call_to_action: "Don't just stand there, hire me!", message: @message %>
     </div>
   </div>
 </div>
@@ -191,5 +191,15 @@
       scrollTop: $(".resume").offset().top - 100
     }, 2000);
   })
+
+  $('.new_message').bind('ajax:success', function() {
+    $('.contact')
+      .slideUp(1000)
+    setTimeout(function(){
+      $('.contact')
+        .html("<h1>Thanks!</h1>")
+        .slideDown(1000)
+    }, 1500);
+  });
 
 </script>

@@ -1,21 +1,63 @@
 html {
-
+  background: image_url("background.jpg") fixed;
   background-size: cover;
 
   body {
     background: image_url("stripe1.png");
-    font-family: "Inconsolata", courier, monospace;
+    font-family: "Lato", "Inconsolata", courier, monospace;
+  }
+
+  p, li {
+    font-size: 1.1em;
   }
 
   h1, h2, h3, h4, h5, h6 {
+    background: rgba(0,0,0,0.5);
+    padding-left: 10px;
     color: white;
-    border-bottom: 2px solid rgba(255,255,255,0.4);
+    border-bottom: 2px dashed rgba(255,255,255,0.4);
+    font-family: "Sanchez", "Helvetica Neue", Helvetica, Arial, sans-serif;
   }
+
+  a{
+    background: rgba(0,200,200,0.5);
+    color: white;
+    padding: 0 5px;
+    &:hover {
+      color: white;
+      background: rgba(0,200,200,0.3);
+    };
+  }
+}
+
+.header {
+  position: fixed;
+  background: rgba(0,0,0,0.9);
+  width: 100%;
+  padding: 20px;
+  opacity: 0;
+  color: white;
+  z-index: 999;
+
+  .header-left {
+    float: left;
+  }
+
+  .header-right {
+    float: right;
+  }
+
 }
 
 .footer {
   margin-top: 30px;
   text-align: center;
+  background: rgba(0,0,0,0.5);
+  padding: 20px;
+  color: white;
+}
+
+.debug {
   background: rgba(255,255,255,0.5);
   padding: 10px;
 }

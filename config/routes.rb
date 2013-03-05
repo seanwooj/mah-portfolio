@@ -1,3 +1,7 @@
 Portfolio::Application.routes.draw do
-  get 'static_pages/home'
+  root to: 'messages#new'
+
+  resources :sessions
+  resources :messages
+
 end

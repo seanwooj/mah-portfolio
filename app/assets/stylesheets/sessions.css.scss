@@ -1,0 +1,50 @@
+// Place all the styles related to the Sessions controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+input.session-input {
+  background: rgba(0,0,0,0.5);
+  border: none;
+  border-bottom: 5px dashed white;
+  height: 2em;
+  font-size: 4em;
+  color: white;
+  font-family: "Sanchez";
+
+  &:focus, &:active {
+    background: rgba(0,0,0,0.6);
+  }
+}
+
+.session-container {
+  h1 {
+    background: none;
+    border-bottom: 5px dashed white;
+  }
+
+  label {
+    color: rgba(0,0,0,0.7);
+  }
+}
+
+#session-modal {
+  background: rgba(255,255,255,0.8);
+  box-shadow: none;
+  -moz-box-shadow: none;
+  -webkit-box-shadow: none;
+  border: none;
+  top: 20px;
+
+  .submit-session-button {
+    position: relative;
+    top: 0;
+    right: 0;
+    color: white;
+
+  }
+}
+
+.hidden-reveal-modal {
+  display: none;
+}
+
